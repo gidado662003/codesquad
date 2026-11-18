@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+/index.js
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package manager
+.npm/
+.yarn/
+yarn.lock.bak
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional cache directories
+.cache/
+.eslintcache
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo
