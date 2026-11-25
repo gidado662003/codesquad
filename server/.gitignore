@@ -1,7 +1,6 @@
 # Dependencies
 node_modules/
 
-/index.js
 # Environment variables
 .env
 .env.local

@@ -67,14 +67,16 @@ export default function TasksPage() {
         description: String(data.get("description")),
         status: String(data.get("status")) as Task["status"],
       });
-      setTasks((current) => current.map((t) => (t.id === updated.id ? updated : t)));
+      setTasks((current) =>
+        current.map((t) => (t.id === updated.id ? updated : t)),
+      );
       setEditing(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not update task");
     }
   }
 
-  async function onDelete(id: number) {
+  async function onDelete(id: string) {
     try {
       await deleteTask(id);
       setTasks((current) => current.filter((t) => t.id !== id));
@@ -89,14 +91,16 @@ export default function TasksPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-6 py-10">
+    <main className="mx-auto w-full  px-6 py-10">
       <header className="flex items-center justify-between gap-4">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-blue-700">
-            Connected to http://localhost:4000
+            Connected to http://localhost:5000/api/v1
           </p>
           <h1 className="text-3xl font-semibold tracking-tight">My tasks</h1>
-          <p className="text-stone-600">Hello{userName ? `, ${userName}` : ""}.</p>
+          <p className="text-stone-600">
+            Hello{userName ? `, ${userName}` : ""}.
+          </p>
         </div>
         <button
           type="button"
@@ -200,7 +204,9 @@ export default function TasksPage() {
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <h3 className="text-lg font-semibold">{task.title}</h3>
-                      <p className="text-sm capitalize text-blue-700">{task.status}</p>
+                      <p className="text-sm capitalize text-blue-700">
+                        {task.status}
+                      </p>
                     </div>
                     <div className="flex gap-2">
                       <button

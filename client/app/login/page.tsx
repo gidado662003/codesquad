@@ -36,7 +36,7 @@ export default function LoginPage() {
       </p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight">Log in</h1>
       <p className="mt-2 text-stone-600">
-        This form sends <code className="rounded bg-stone-200 px-1">POST /login</code>{" "}
+        This form sends <code className="rounded bg-stone-200 px-1">POST /api/v1/auth/login</code>{" "}
         to the Express server.
       </p>
       <form onSubmit={onSubmit} className="mt-8 space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
